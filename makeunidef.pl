@@ -980,7 +980,8 @@ EOT
     my %tablecode = ();
     for (my $i=$start; $i<=$end; $i++) {
 	my @chars = ();
-	@chars = @{$characters[$i]} if defined @{$characters[$i]};
+	# https://stackoverflow.com/a/41983753/1158383
+	@chars = @{$characters[$i]} if @{$characters[$i]};
 	my $entry = ($unidata[$i])?"\\noglyph":"\\unassigned";
 	my $found = 0;
 	my $hasctrlglyph = undef;
