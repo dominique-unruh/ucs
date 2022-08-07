@@ -1,0 +1,30 @@
+% https://tex.stackexchange.com/a/652196
+\input{regression-test}
+
+\documentclass[a4paper,10pt,twocolumn]{article}
+
+\START
+
+\usepackage[utf8x]{inputenc}
+
+\OMIT
+\usepackage[explicit]{titlesec}
+\usepackage{hyperref}
+
+\begin{document}
+\TIMO
+
+\fontsize{9pt}{9pt}\selectfont
+\textbf{RESUME -- bla bla.}% No!!! badness 10000\\
+
+\textbf{\textit{Mots-clés -- bla bla.}}
+
+\fontsize{10pt}{10pt}\selectfont
+
+\section{Introduction}
+    some text
+
+\section{work done}
+    \subsection{TD}
+
+\end{document}

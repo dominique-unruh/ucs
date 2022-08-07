@@ -1,0 +1,8 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+
+\begin{document}
+
+aaa \unichar{"63} aaa \unichar{"F6} aaa \unichar{"2014} aaa 
+\end{document}

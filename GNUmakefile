@@ -44,7 +44,7 @@ utils_generated = c00enc.def    \
                   xscmr.fd      \
                   cp1252.enc
 
-local_pdflatex=TEXINPUTS=.:data:utils: pdflatex
+local_pdflatex=TEXINPUTS=".;data;utils;" pdflatex
 
 all: docstrip datafiles doc
 .PHONY: all
