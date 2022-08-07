@@ -2,13 +2,15 @@
 % -*-coding: utf-8; mode: latex;-*-
 %
 %<*driver>
-\ProvidesFile{ucs.dtx}[2013/05/11 v2.2
+\ProvidesFile{ucs.dtx}[2022/08/07 v2.3
    UCS: Master document for generating documentation for ucs.sty]
 %
 \documentclass{ltxdoc}
-\usepackage[postscript]{ucs}
+%\usepackage[postscript]{ucls}
 \usepackage[utf8x]{inputenc}
-\usepackage[univerb]{ucsutils}
+%\usepackage[univerb]{ucsutils}
+\def\SetUnicodeOption#1{}
+
 \usepackage[T2A,T1]{fontenc}
 \usepackage[hyperindex,unicode]{hyperref}
 %\makeatletter
@@ -62,7 +64,7 @@
 % \expandafter\let\expandafter\percent\csname @percentchar\endcsname
 % \let\ucsdocmfour1^^A
 % \let\xsection\section
-%\ProvidesFile{ucs-doc.tex}[2004/10/17 Main documentation for package ucs]
+%\ProvidesFile{ucs-doc.tex}[2022/108/07 Main documentation for package ucs]
 %
 %\ifx\ucsdocmfour\undefined
 %\documentclass{ltxdoc}
@@ -295,8 +297,7 @@
 %\def\acuteacc{\textsc{U+0301 combining acute accent}}
 %In some cases, Unicode documents contain sequences like \latinc\space\acuteacc
 %(producing {^^A
-%\SetUnicodeOption{combine}\unichar{"63}^^A
-%\unichar{"301}\SetUnicodeOption{nocombine}}). In order to typeset them
+%\'c). In order to typeset them
 %correctly, we cannot render \latinc immediately when it occurs,
 %instead we have to wait whether some combining character is going to
 %follow.
@@ -654,7 +655,7 @@
 %
 %    \begin{macrocode}
 \ifx\ProvidesPackage\undefined\else
-\ProvidesPackage{ucs}[2013/05/11 v2.2 UCS: Unicode input support]%
+\ProvidesPackage{ucs}[2022/08/07 v2.3 UCS: Unicode input support]%
 \fi
 %    \end{macrocode}
 % ^^A FIXME: We should update the date of ucs.sty even if the file ucs.sty has not changed, but the
@@ -2058,7 +2059,42 @@
 %    \begin{macrocode}
 %<*utf8x.def>
 \ifx\ProvidesFile\undefined\else
-\ProvidesFile{utf8x.def}[2004/10/17 UCS: Input encoding UTF-8]%
+\ProvidesFile{utf8x.def}[2022/08/07 UCS: Input encoding UTF-8]%
+
+\ifx\uc@char@notloaded\@undefined
+
+\PackageNoteNoLine{ucs}{%
+utf8x\space disabled,\space assuming\space standard\space utf8\space processing\MessageBreak
+load\space ucs\space package\space to\space force\space utf8x\space processing}
+
+\let\ucs@parse@XML@charref\parse@XML@charref
+\let\ucs@parse@UTFviii@a\parse@UTFviii@a
+\let\ucs@parse@UTFviii@b\parse@UTFviii@b
+\AddToHook{begindocument/end}{%
+\let\parse@XML@charref\ucs@parse@XML@charref
+\let\parse@UTFviii@a\ucs@parse@UTFviii@a
+\let\parse@UTFviii@b\ucs@parse@UTFviii@b
+}
+
+\protected\def\unichar#1{%
+\begingroup
+\count@#1\relax
+\ifnum\count@>127
+\parse@XML@charref
+\else
+\edef\UTFviii@tmp{\char\the\count@\relax}%
+\fi
+\expandafter
+\endgroup
+\UTFviii@tmp
+}
+%
+\def\inputencodingname{utf8}
+% need to re-input this to undo the RawInputEncoding
+\input{utf8.def}%
+%
+\expandafter\expandafter\expandafter\endinput
+\fi
 \fi
 %    \end{macrocode}
 % Only load this file once. If it has already been loaded, just execute
