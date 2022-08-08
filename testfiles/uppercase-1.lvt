@@ -1,0 +1,18 @@
+\input{regression-test}
+
+% should not error
+
+\documentclass{article}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\begin{document}
+
+\START
+
+\MakeUppercase{café}
+
+{\fontencoding{LGR}\selectfont\MakeUppercase{αω}}
+
+\END
