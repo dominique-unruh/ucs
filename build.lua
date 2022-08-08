@@ -9,6 +9,8 @@ installfiles = {"*.def","*.sty"}
 
 mybundleunpack=bundleunpack
 function bundleunpack(sources, sourcedirs)
+  mkdir("build")
+  mkdir("build/local")
   cp("UnicodeData.txt",string.match(kpse.lookup("UnicodeData.txt"),"(.*[/])"),".")
   mkdir("data")
   runcmd("perl -w makeunidef.pl --nocomments --targetdir=data config/*.ucf")
