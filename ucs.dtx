@@ -455,6 +455,33 @@
 % ^^A FIXME: What is the following code for? Is it for people who want to use ucs.sty with Plain TeX
 % ^^A        or ConTeXt?
 \catcode`\@11
+
+\ifx\AddToHook\@undefined\else
+\AddToHook{package/hyperref/after}{%
+ \def\HyPsd@expand@utfvii{%
+    \count@"C2
+    \@tempcnta"E0
+    \def\UTFviii@tmp{%
+\expandafter\def\expandafter~\expandafter####\expandafter1\expandafter{~{####1}}%
+}%
+    \UTFviii@loop
+    \count@"E0
+    \@tempcnta"F0
+    \def\UTFviii@tmp{%
+\expandafter\def\expandafter~\expandafter####\expandafter1\expandafter####\expandafter2\expandafter{~{####1}{####2}}%
+}%
+    \UTFviii@loop
+    \count@"F0
+    \@tempcnta"F5
+    \def\UTFviii@tmp{%
+\expandafter\def\expandafter~\expandafter####\expandafter1\expandafter####\expandafter2\expandafter####\expandafter3\expandafter{~{####1}{####2}{####3}}%
+}%
+    \UTFviii@loop
+
+  }
+}
+\fi
+
 \ifx\@gobble\undefined\def\@gobble#1{}\fi
 \ifx\@gobbletwo\undefined\def\@gobbletwo#1#2{}\fi
 \ifx\@gobblethree\undefined\def\@gobblethree#1#2#3{}\fi

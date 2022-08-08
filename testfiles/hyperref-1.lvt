@@ -1,0 +1,17 @@
+\input{regression-test}
+
+% should not error
+
+\documentclass{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage[unicode]{hyperref}
+
+\begin{document}
+
+\START
+\section{grüße}
+Dummy text here
+
+\end{document}
