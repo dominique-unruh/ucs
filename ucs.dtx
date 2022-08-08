@@ -1954,7 +1954,7 @@
 %    \begin{macrocode}
 ^^B\def\uc@vbsetchar#1#2{%
 ^^B  \catcode#1\active
-^^B  \begingroup\uccode`\~#1\uppercase{\endgroup\edef~}{#2}}
+^^B  \begingroup\uccode`\~#1\uppercase{\endgroup\protected\edef~}{#2}}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -2180,7 +2180,7 @@ load\space ucs\space package\space to\space force\space utf8x\space processing}
    \uccode`\u`\u%
    \uppercase{%
  \endgroup
-   \edef~%
+   \protected\edef~%
  #3{\noexpand\expandafter\noexpand\ifx\noexpand\csname u8-\number\count255-#4\noexpand\endcsname\relax
    \begingroup
 %    \end{macrocode}
@@ -2219,7 +2219,7 @@ load\space ucs\space package\space to\space force\space utf8x\space processing}
     \uccode`\~\count255 %SPACE
     \uppercase{%
   \endgroup
-    \edef~}%
+    \protected\edef~}%
   {\noexpand\utf@viii@err{\number\count255}}%
  \advance\count255by1\relax
  \repeat}%
