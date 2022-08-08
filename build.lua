@@ -15,7 +15,7 @@ function bundleunpack(sources, sourcedirs)
   mkdir("data")
   runcmd("perl -w makeunidef.pl --nocomments --targetdir=data config/*.ucf")
   rm(".","UnicodeData.txt")
-  mybundleunpack(sources, sourcedirs)
+  return mybundleunpack(sources, sourcedirs)
 end
 
 
