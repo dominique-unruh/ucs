@@ -14,7 +14,7 @@ sourcefiles={
 "*.ins","*.dtx",
 "*.pl",
 "GNUmakefile",
-"FAQ","VERSION","README.txt","INSTALL", "LICENSE",
+"FAQ.txt","VERSION.txt","README.txt","INSTALL.txt", "LICENSE.txt",
 "ltxmacrs.txt","languages.ps.gz",
 "config","data","unsupported","utils"
 }
