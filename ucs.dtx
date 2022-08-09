@@ -11,6 +11,7 @@
 %\usepackage[univerb]{ucsutils}
 \def\SetUnicodeOption#1{}
 
+\setcounter{section}{-1}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[hyperindex,unicode]{hyperref}
 %\makeatletter
@@ -80,7 +81,8 @@
 %\fi
 %
 %\title{\texttt{ucs.sty} - Unicode Support}
-%\author{Dominique~P.~G.~Unruh\\Wolfgang Jeltsch}
+%\author{Dominique~P.~G.~Unruh\\Wolfgang Jeltsch\\David Carlisle (2022
+%update)}
 %\maketitle
 %
 %\MakeShortVerb{\|}
@@ -131,6 +133,45 @@
 %\parskip=\medskipamount
 %
 %\tableofcontents
+%
+%\section{2022 Update Notes}
+% \large\bfseries
+% When |ucs/uf8x| was first written, its Unicode support was far
+% more extensive than the standard release, and users could simply
+% opt in via the |[utf8x]| option. In the years since then Standard
+% \LaTeX\ Unicode support has bee extended and enabled by default.
+% Various featuressuch as filenaes|\label| arguments and Upper/Lower
+% case changing now work by default with UTF-8, but assuming the standard
+% implementation.
+%
+% With the June 2022 \LaTeX\ release these incompatibilities meant that
+% simply loading |inputenc| with the |utf8x| could produce low level \TeX\
+% errors.
+% 
+% The origial maintainers kindly allowed the \LaTeX\ project members
+% to make this |2022/08/07 v2.3| release.
+%
+% The remaining documentation is unchanged but version 2.3 introduces
+% the following changes
+%
+% \begin{itemize}
+% \item If a document uses |\usepackage[utf8x]{inputenc}| when the
+% |ucs| package has \emph{not} been loaded, A Message is issued on the
+% terminal, and the standard |[utf8]| option is used instead.
+%
+% The warning can be avoided by simply deleting\\
+% |\usepackage[utf8x]{inputenc}|\\
+% as UTF-8 is the default encoding.
+%
+% \item If the |ucs| package is loaded explicitly, then the |utf8x.def|
+% file is input in the normal way. |utf8x.def| and |ucs.sty| have both
+% been modified to be more compatible with current \LaTeX\ releases.
+% Notably making the active characters |\protected| so that they work
+% with the new |\MakeUppercase|.
+%
+% \end{itemize}
+%
+% \normalsize\normalfont
 %
 %\section{Usage}
 %
