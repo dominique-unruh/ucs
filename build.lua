@@ -5,6 +5,7 @@ checkruns=2
 
 installfiles = {"*.def","*.sty"}
 
+textfiles  = {"*.txt"}
 ctanreadme="README.txt"
 
 sourcefiles={
