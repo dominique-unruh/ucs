@@ -5,6 +5,18 @@ checkruns=2
 
 installfiles = {"*.def","*.sty"}
 
+ctanreadme="README.txt"
+
+sourcefiles={
+"*.ins","*.dtx",
+"*.pl",
+"GNUmakefile",
+"FAQ","VERSION","README.txt","INSTALL", "LICENSE",
+"ltxmacrs.txt","languages.ps.gz",
+"config","data","utils","unsupported"
+}
+flatten=false
+
 
 
 mybundleunpack=bundleunpack

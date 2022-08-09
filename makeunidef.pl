@@ -440,8 +440,10 @@ sub openfile ($$$%) {
 	    $file = $devnull; }
 	print $file "$header\n";
 	my @date = localtime;
-	my $date = sprintf "%04d/%02d/%02d", 
-	$date[5]+1900, $date[4]+1, $date[3];
+# fix to match advertised ucs package date
+#	my $date = sprintf "%04d/%02d/%02d", 
+#	$date[5]+1900, $date[4]+1, $date[3]
+        my  $date="2022/08/07";
 	my $basename = $filename; $basename =~ s@.*/@@;
 	print $file "\\ifx\\ProvidesFile\\undefined\\else
 \\ProvidesFile{$basename}[$date UCS: $description]%
