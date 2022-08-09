@@ -8,15 +8,18 @@ installfiles = {"*.def","*.sty"}
 textfiles  = {"*.txt"}
 ctanreadme="README.txt"
 
+installfiles  = {"*.sty","*.cls","*.fd","*.def","*.tex","*.enc"}
+
 sourcefiles={
 "*.ins","*.dtx",
 "*.pl",
 "GNUmakefile",
 "FAQ","VERSION","README.txt","INSTALL", "LICENSE",
 "ltxmacrs.txt","languages.ps.gz",
-"config","data","utils","unsupported"
+"config","data","unsupported","utils"
 }
 flatten=false
+flattentds=false
 
 
 
