@@ -1,6 +1,6 @@
 
 module = "ucs"
-checkengines={"pdftex"}
+checkengines={"pdftex","luatex"}
 checkruns=2
 
 installfiles = {"*.def","*.sty"}

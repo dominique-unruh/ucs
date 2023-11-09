@@ -2,7 +2,6 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 (../uni-0.def
 File: uni-0.def ....-..-.. UCS: Unicode data U+0000..U+00FF
-)
-(../uni-3.def
+) (../uni-3.def
 File: uni-3.def ....-..-.. UCS: Unicode data U+0300..U+03FF
 )
