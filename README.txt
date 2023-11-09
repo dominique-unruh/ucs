@@ -24,12 +24,12 @@ do only supply macros, which generate aesthetic glyphs, no hacks.
 Information about this package, including a link to its source code
 repository, can be found at
 
-    <http://wolfgang.jeltsch.info/software/tex/ucs>  .
+    <https://github.com/LaTeX-Package-Repositories/ucs>more 
 
 =========
 
 (C) 2000       by Dominique Unruh  <unruh@ut.ee>
 (C) 2011--2013 by Wolfgang Jeltsch <wolfgang@cs.ioc.ee>
-(C) 2022       David Carlisle david.carlisle@latex-project.org
+(C) 2022--2023    David Carlisle david.carlisle@latex-project.org
 
 See the LICENSE file for licensing informations.

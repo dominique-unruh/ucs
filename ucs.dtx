@@ -2,7 +2,7 @@
 % -*-coding: utf-8; mode: latex;-*-
 %
 %<*driver>
-\ProvidesFile{ucs.dtx}[2022/08/07 v2.3
+\ProvidesFile{ucs.dtx}[2023/11/09 v2.4
    UCS: Master document for generating documentation for ucs.sty]
 %
 \documentclass{ltxdoc}
@@ -149,10 +149,10 @@
 % low level \TeX\ errors.
 %
 % The original maintainers kindly allowed the \LaTeX\ project members
-% to make this |2022/08/07 v2.3| release.
+% to make the releases from |2023/11/09 v2.3|.       .
 %
 % The remaining documentation is unchanged but version 2.3 introduces
-% the following changes
+% the following changes, and version 2.4 aborts with a warning if used with Uniocde TeX.
 %
 % \begin{itemize}
 % \item If a document uses |\usepackage[utf8x]{inputenc}| when the
@@ -493,13 +493,26 @@
 % \xsection{File \texttt{ucs.sty}}
 %    \begin{macrocode}
 %<*ucs.sty>
+%    \end{macrocode}
+%    \begin{macrocode}
+\ifx\ProvidesPackage\undefined\else
+\ProvidesPackage{ucs}[2023/11/09 v2.4 UCS: Unicode input support]%
+\fi
+\ifx\Umathchar\undefined\else
+\ifx\PackageWarningNoLine\undefined\else
+\PackageWarningNoLine{ucs}{ucs package ignored with utf8 based engines}
+\fi
+\expandafter\endinput
+\fi
+%    \end{macrocode}
+%    \begin{macrocode}
 % ^^A FIXME: What is the following code for? Is it for people who want to use ucs.sty with Plain TeX
 % ^^A        or ConTeXt?
 \catcode`\@11
 
 \ifx\AddToHook\@undefined\else
 \AddToHook{package/hyperref/after}{%
- \def\HyPsd@expand@utfvii{%
+ \def\HyPsd@expand@UTFviii{%
     \count@"C2
     \@tempcnta"E0
     \def\UTFviii@tmp{%
@@ -520,6 +533,7 @@
     \UTFviii@loop
 
   }
+ \let\HyPsd@expand@utfvii\HyPsd@expand@UTFviii
 }
 \fi
 
@@ -721,11 +735,6 @@
 %    \end{macrocode}
 % \end{macro}
 %
-%    \begin{macrocode}
-\ifx\ProvidesPackage\undefined\else
-\ProvidesPackage{ucs}[2022/08/07 v2.3 UCS: Unicode input support]%
-\fi
-%    \end{macrocode}
 % ^^A FIXME: We should update the date of ucs.sty even if the file ucs.sty has not changed, but the
 % ^^A        character mappings have. Otherwise, we cannot specify a complience level by adding a
 % ^^A        date to \usepackage{ucs} or \RequirePackage{ucs}.
@@ -2127,7 +2136,7 @@
 %    \begin{macrocode}
 %<*utf8x.def>
 \ifx\ProvidesFile\undefined\else
-\ProvidesFile{utf8x.def}[2022/08/07 UCS: Input encoding UTF-8]%
+\ProvidesFile{utf8x.def}[2023/11/09 UCS: Input encoding UTF-8]%
 
 \ifx\uc@char@notloaded\@undefined
 
