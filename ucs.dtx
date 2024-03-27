@@ -2,7 +2,7 @@
 % -*-coding: utf-8; mode: latex;-*-
 %
 %<*driver>
-\ProvidesFile{ucs.dtx}[2023/11/09 v2.4
+\ProvidesFile{ucs.dtx}[2024/03/27 v2.5
    UCS: Master document for generating documentation for ucs.sty]
 %
 \documentclass{ltxdoc}
@@ -56,6 +56,7 @@
 % \changes{v2.1}{2012/08/28}{Some small bug fixes}
 % \changes{v2.2}{2013/05/11}{Fixed a bug related to the optional definition of \cs{@ifnextchar} (see
 %                            \url{http://tinyurl.com/dxncfn9})}
+% \changes{v2.5}{2024/03/27}{clear option list for github issue 2}
 % ^^A FIXME: The page number of the changelog entry for the \show removal mentions page 48, although
 % ^^A        the code appears on page 50.
 % ^^A FIXME: There are no index entries for macro descriptions (only for macro definitions and
@@ -65,7 +66,7 @@
 % \expandafter\let\expandafter\percent\csname @percentchar\endcsname
 % \let\ucsdocmfour1^^A
 % \let\xsection\section
-%\ProvidesFile{ucs-doc.tex}[2022/108/07 Main documentation for package ucs]
+%\ProvidesFile{ucs-doc.tex}[2024/03/27 v2.5 Main documentation for package ucs]
 %
 %\ifx\ucsdocmfour\undefined
 %\documentclass{ltxdoc}
@@ -496,12 +497,13 @@
 %    \end{macrocode}
 %    \begin{macrocode}
 \ifx\ProvidesPackage\undefined\else
-\ProvidesPackage{ucs}[2023/11/09 v2.4 UCS: Unicode input support]%
+\ProvidesPackage{ucs}[2024/03/27 v2.5 UCS: Unicode input support]%
 \fi
 \ifx\Umathchar\undefined\else
 \ifx\PackageWarningNoLine\undefined\else
 \PackageWarningNoLine{ucs}{ucs package ignored with utf8 based engines}
 \fi
+\expandafter\let\csname opt@ucs.sty\endcsname\@empty
 \expandafter\endinput
 \fi
 %    \end{macrocode}

@@ -30,6 +30,6 @@ repository, can be found at
 
 (C) 2000       by Dominique Unruh  <unruh@ut.ee>
 (C) 2011--2013 by Wolfgang Jeltsch <wolfgang@cs.ioc.ee>
-(C) 2022--2023    David Carlisle david.carlisle@latex-project.org
+(C) 2022--2024    David Carlisle david.carlisle@latex-project.org
 
 See the LICENSE file for licensing informations.

@@ -1,0 +1,9 @@
+\input{regression-test}
+\documentclass{article}
+
+\START
+% should not error see LaTeX-Package-Repositories/ucs/issues/2
+\usepackage[mathletters]{ucs}
+
+\END
+
