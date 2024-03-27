@@ -3,7 +3,7 @@
 % should not error
 
 \documentclass{article}
-%\usepackage{ucs}
+\usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 
 \usepackage[unicode]{hyperref}
