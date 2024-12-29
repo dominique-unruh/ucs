@@ -20,7 +20,7 @@ not displayed.
 
 =head1 AUTHOR
 
-Dominique Unruh <I<unruh@ut.ee>>.
+Dominique Unruh <I<latex.ucs.0vm69c@x.unruh.de>>.
 
 =head1 SEE ALSO
 

@@ -1,4 +1,4 @@
-Copyright 2000      by Dominique Unruh  <unruh@ut.ee>
+Copyright 2000      by Dominique Unruh  <latex.ucs.0vm69c@x.unruh.de>
 Copyright 2011-2013 by Wolfgang Jeltsch <wolfgang@cs.ioc.ee>
 Copyright 2022-2024 by David Carlisle   <david.carlisle@latex-project.org>
 

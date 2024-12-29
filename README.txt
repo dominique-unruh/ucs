@@ -28,7 +28,7 @@ repository, can be found at
 
 =========
 
-(C) 2000       by Dominique Unruh  <unruh@ut.ee>
+(C) 2000       by Dominique Unruh  <latex.ucs.0vm69c@x.unruh.de>
 (C) 2011--2013 by Wolfgang Jeltsch <wolfgang@cs.ioc.ee>
 (C) 2022--2024    David Carlisle david.carlisle@latex-project.org
 
